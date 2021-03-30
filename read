@@ -1,0 +1,3 @@
+8. Combinational circuit has an output that corresponds only to the specific inputs, that is the output varies with the inputs and does not change until the inputs change first. Sequential circuits have outputs that rely on the previous and current inputs. In otherwords this type of circuits keeps track of history.
+16. registers are synchronous, while multiplexers and decoders are asynchronous with resets
+17. Datapath transforms and stores temporary data. The controller controls how the data from the datapath is used
