@@ -1,7 +1,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-
+--note that I tried to make two different designs for 13 and 14: this one is a combinational circuit that takes in the present state
+--and outputs the next state. This output should be connected back into the input. Number 14 is coded like a state machine.
 entity counter is
 port (Q: in std_logic_vector(1 downto 0);
        led: out std_logic_vector(3 downto 0);
