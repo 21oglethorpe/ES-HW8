@@ -1,0 +1,42 @@
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity machine is
+port (  q, clk : in std_logic;
+        PS : in std_logic_vector(1 downto 0);
+        vend : out std_logic);
+end machine;
+
+architecture Behavioral of machine is
+ type state is (Q0, Q1, Q2);
+    signal curr : state := Q0;
+begin
+if rising_edge(clk)
+begin
+case curr is
+
+                when Q0 =>
+                    vend <= '0;
+                    if q = '1' then
+                        curr <= Q1;
+                    end if;
+
+                when Q1 =>
+                    vend <= '0;
+                    if q = '1' then
+                        curr <= Q2;
+                    end if;
+               when Q2 =>
+                    vend <= '0;
+                    if q = '1' then
+                        curr <= Q1;
+                        vend <= '1';
+                    end if;
+
+                when others =>
+                    curr <= idle;
+
+            end case;
+end process;
+end Behavioral;
