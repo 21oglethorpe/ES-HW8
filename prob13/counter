@@ -1,0 +1,19 @@
+
+
+entity counter is
+port (Q: in std_logic_vector(1 downto 0);
+       led: out std_logic_vector(3 downto 0);
+       NS: out std_logic);
+end counter;
+
+architecture Behavioral of counter is
+begin
+case Q is
+when "00" => led <= "0001";
+when "01" => led <= "0010";
+when "10" => led <= "0100";
+when "11" => led <= "1000";
+end case;
+NS(1) <= NOT Q(1);
+NS(0) <= Q(1) XOR Q(0);
+end Behavioral;
