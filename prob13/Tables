@@ -1,0 +1,15 @@
+
+input       
+PS(Q std_logic_vector(1 downto 0))            NS(led std_logic_vector(3 downto 0))          output (led std_logic_vector(3 downto 0))
+00                                            10                                            0001
+01                                            11                                            0010
+10                                            01                                            0100
+11                                            00                                            1000
+
+led0 = Q1'Q0'
+led1 = Q1'Q0
+led2 = Q1Q0'
+led3 = Q1Q0
+
+NS1 = Q1'
+NS0 = Q1 XOR Q2
