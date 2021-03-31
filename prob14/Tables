@@ -4,9 +4,9 @@ the vending machinecontroller. This is an open ended question, please specify an
 PS                            NS q=0     q=1                              output(vend)
 00                               00       01                                0
 01                               01       10                                0
-10                               10       00                                1
-
+10                               10       00                                0
+11                               00       00                                1
 
 NS1 = (q AND PS0) XOR PS1
 NS0 = PS1' AND (q XOR PS0)
-vend = q AND PS1*PS0
+vend = PS1*PS0
