@@ -9,7 +9,7 @@ port (  q, clk : in std_logic;
 end machine;
 
 architecture Behavioral of machine is
- type state is (Q0, Q1, Q2);
+ type state is (Q0, Q1, Q2, QV);
     signal curr : state := Q0;
 begin
 if rising_edge(clk)
@@ -30,10 +30,11 @@ case curr is
                when Q2 =>
                     vend <= '0;
                     if q = '1' then
-                        curr <= Q1;
-                        vend <= '1';
+                        curr <= QV;
                     end if;
-
+               when QV =>
+                     vend <= '1';
+                     curr <= Q0;
                 when others =>
                     curr <= idle;
 
